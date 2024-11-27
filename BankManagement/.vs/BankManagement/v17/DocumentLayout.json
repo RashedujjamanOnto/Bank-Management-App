@@ -54,11 +54,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -70,8 +74,7 @@
               "RelativeToolTip": "ViewModel\\AccountDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T19:31:57.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T19:31:57.34Z"
             },
             {
               "$type": "Document",
@@ -83,8 +86,7 @@
               "RelativeToolTip": "Controllers\\AccountController.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAUwBgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T17:35:57.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T17:35:57.184Z"
             },
             {
               "$type": "Document",
@@ -96,8 +98,7 @@
               "RelativeToolTip": "Controllers\\TwoFactorAuthController.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T15:26:18.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T15:26:18.421Z"
             },
             {
               "$type": "Document",
@@ -109,8 +110,7 @@
               "RelativeToolTip": "Model\\UserRoles.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T15:15:41.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T15:15:41.535Z"
             },
             {
               "$type": "Document",
@@ -122,8 +122,7 @@
               "RelativeToolTip": "Controllers\\TransactionController.cs",
               "ViewState": "AgIAAKMAAAAAAAAAAAAQwMEAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:58:58.818Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T14:58:58.818Z"
             },
             {
               "$type": "Document",
@@ -133,7 +132,7 @@
               "RelativeDocumentMoniker": "Controllers\\LoanController.cs",
               "ToolTip": "E:\\Rashed Project\\BankManagement\\Controllers\\LoanController.cs",
               "RelativeToolTip": "Controllers\\LoanController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAASwCcAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowBkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T14:58:58.841Z",
               "EditorCaption": ""
@@ -148,8 +147,7 @@
               "RelativeToolTip": "Model\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T15:06:20.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T15:06:20.542Z"
             },
             {
               "$type": "Document",
@@ -161,8 +159,7 @@
               "RelativeToolTip": "ViewModel\\UsersData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T15:06:17.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T15:06:17.358Z"
             },
             {
               "$type": "Document",
@@ -174,8 +171,7 @@
               "RelativeToolTip": "ViewModel\\ResetPasswordDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:56:37.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T14:56:37.224Z"
             },
             {
               "$type": "Document",
@@ -187,8 +183,7 @@
               "RelativeToolTip": "ViewModel\\UpdateUserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:55:48.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T14:55:48.717Z"
             },
             {
               "$type": "Document",
@@ -200,8 +195,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAAAFkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:51:39.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T14:51:39.518Z"
             }
           ]
         }
