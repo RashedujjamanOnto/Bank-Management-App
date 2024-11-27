@@ -1,0 +1,211 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Rashed Project\\BankManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\viewmodel\\accountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:viewmodel\\accountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\viewmodel\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:viewmodel\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\viewmodel\\usersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:viewmodel\\usersdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\viewmodel\\resetpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:viewmodel\\resetpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\controllers\\twofactorauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\twofactorauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\model\\userroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:model\\userroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\rashed project\\bankmanagement\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountDto.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\ViewModel\\AccountDto.cs",
+              "RelativeDocumentMoniker": "ViewModel\\AccountDto.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\ViewModel\\AccountDto.cs",
+              "RelativeToolTip": "ViewModel\\AccountDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:31:57.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowBYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T17:35:57.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TwoFactorAuthController.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\Controllers\\TwoFactorAuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TwoFactorAuthController.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\Controllers\\TwoFactorAuthController.cs",
+              "RelativeToolTip": "Controllers\\TwoFactorAuthController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T15:26:18.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserRoles.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\Model\\UserRoles.cs",
+              "RelativeDocumentMoniker": "Model\\UserRoles.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\Model\\UserRoles.cs",
+              "RelativeToolTip": "Model\\UserRoles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T15:15:41.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransactionController.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\Controllers\\TransactionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TransactionController.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\Controllers\\TransactionController.cs",
+              "RelativeToolTip": "Controllers\\TransactionController.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAQwMEAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:58:58.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoanController.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\Controllers\\LoanController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoanController.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\Controllers\\LoanController.cs",
+              "RelativeToolTip": "Controllers\\LoanController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAqwIIAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:58:58.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\Model\\User.cs",
+              "RelativeDocumentMoniker": "Model\\User.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\Model\\User.cs",
+              "RelativeToolTip": "Model\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T15:06:20.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UsersData.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\ViewModel\\UsersData.cs",
+              "RelativeDocumentMoniker": "ViewModel\\UsersData.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\ViewModel\\UsersData.cs",
+              "RelativeToolTip": "ViewModel\\UsersData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T15:06:17.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ResetPasswordDto.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\ViewModel\\ResetPasswordDto.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ResetPasswordDto.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\ViewModel\\ResetPasswordDto.cs",
+              "RelativeToolTip": "ViewModel\\ResetPasswordDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:56:37.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UpdateUserDto.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\ViewModel\\UpdateUserDto.cs",
+              "RelativeDocumentMoniker": "ViewModel\\UpdateUserDto.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\ViewModel\\UpdateUserDto.cs",
+              "RelativeToolTip": "ViewModel\\UpdateUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:55:48.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\Rashed Project\\BankManagement\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "E:\\Rashed Project\\BankManagement\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAAFkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:51:39.518Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
