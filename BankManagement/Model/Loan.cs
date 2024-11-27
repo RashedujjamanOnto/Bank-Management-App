@@ -31,10 +31,7 @@ namespace BankManagement.Model
         public string Status { get; set; } = "Pending"; // "Pending", "Approved", "Rejected"
 
         [Required]
-        public int UserId { get; set; }
-
-        // Navigation property
-        public User User { get; set; }
+        public int AccountId { get; set; }
 
         // Calculated field
         public double TotalRepayableAmount

@@ -65,6 +65,32 @@
   },
   {
     "ContainingType": "BankManagement.Controllers.AccountController",
+    "Method": "GetAllLoanAccounts",
+    "RelativePath": "api/Account/GetAllLoanAccounts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankManagement.Controllers.AccountController",
+    "Method": "GetLoanAccount",
+    "RelativePath": "api/Account/GetLoanAccount/{selfUserId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "selfUserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankManagement.Controllers.AccountController",
     "Method": "GetUsers",
     "RelativePath": "api/Account/GetUsers",
     "HttpMethod": "GET",
@@ -128,7 +154,49 @@
   {
     "ContainingType": "BankManagement.Controllers.DashboardController",
     "Method": "UserDashboard",
-    "RelativePath": "api/Dashboard/UserDashboard",
+    "RelativePath": "api/Dashboard/UserDashboard/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankManagement.Controllers.InterestAndSavingsController",
+    "Method": "CalculateInterest",
+    "RelativePath": "api/InterestAndSavings/CalculateInterest",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankManagement.Controllers.InterestAndSavingsController",
+    "Method": "EnrollSavingsPlan",
+    "RelativePath": "api/InterestAndSavings/EnrollSavingsPlan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BankManagement.ViewModel.SavingsPlanRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankManagement.Controllers.InterestAndSavingsController",
+    "Method": "GetSavingsPlans",
+    "RelativePath": "api/InterestAndSavings/GetSavingsPlans",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -180,13 +248,13 @@
   {
     "ContainingType": "BankManagement.Controllers.LoanController",
     "Method": "GetUserLoans",
-    "RelativePath": "api/Loan/GetUserLoans/{userId}",
+    "RelativePath": "api/Loan/GetUserLoans/{accountId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userId",
+        "Name": "accountId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -226,17 +294,63 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BankManagement.Controllers.ReportController",
-    "Method": "GetTransactionHistory",
-    "RelativePath": "api/Report/transaction-history/{userId}",
+    "ContainingType": "BankManagement.Controllers.ReportsController",
+    "Method": "ExportTransactions",
+    "RelativePath": "api/Reports/ExportTransactions",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userId",
+        "Name": "accountId",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankManagement.Controllers.ReportsController",
+    "Method": "GetDetailedReports",
+    "RelativePath": "api/Reports/GetDetailedReports",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankManagement.Controllers.ReportsController",
+    "Method": "GetTransactions",
+    "RelativePath": "api/Reports/GetTransactions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accountId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -283,22 +397,6 @@
     "Parameters": [
       {
         "Name": "accountId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BankManagement.Controllers.TransactionController",
-    "Method": "RepayLoan",
-    "RelativePath": "api/Transaction/RepayLoan/{scheduleId}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "scheduleId",
         "Type": "System.Int32",
         "IsRequired": true
       }

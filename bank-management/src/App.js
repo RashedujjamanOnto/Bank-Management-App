@@ -3,13 +3,20 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Layout from "./components/Layout";
 import Login from "./components/LoginForm";
 import Users from "./components/Users";
-import Dashboard from "./pages/Dashboard";
 import Account from "./pages/Account";
 import AccountDetails from "./pages/AccountDetails";
 import Transactions from "./pages/Transactions";
 import LoanApplication from "./pages/LoanApplication";
 import LoanApproval from "./pages/LoanApproval";
 import RepaymentSchedule from "./pages/RepaymentSchedule";
+import SavingsPlans from './pages/SavingsPlans';
+import InterestLogs from './pages/InterestLogs';
+import MonthlyStatements from './pages/MonthlyStatements';
+import DetailedReports from './pages/DetailedReports';
+import AdminDashboard from "./pages/AdminDashboard";
+import CustomerDashboard from "./pages/CustomerDashboard";
+
+const userRole = localStorage.getItem("role");
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token"));
@@ -32,19 +39,39 @@ const App = () => {
           path="/"
           element={
             isAuthenticated ? (
-              <Navigate to="/dashboard" replace />
+              userRole === "Administrator" ? (
+                <Navigate to="/adminDashboard" replace />
+              ) : userRole === "Customer" ? (
+                <Navigate to="/customerDashboard" replace />
+              ) : (
+                <Navigate to="/" replace />
+              )
             ) : (
               <Login setIsAuthenticated={setIsAuthenticated} />
             )
           }
         />
-        {/* <Route path="/register" element={<Register />} /> */}
-
-        {/* Layout with Protected Routes */}
         <Route path="/" element={<Layout />}>
+          {/* Protected Routes */}
           <Route
-            path="dashboard"
-            element={isAuthenticated ? <Dashboard /> : <Navigate to="/" replace />}
+            path="adminDashboard"
+            element={
+              isAuthenticated && userRole === "Administrator" ? (
+                <AdminDashboard />
+              ) : (
+                <Navigate to="/" replace />
+              )
+            }
+          />
+          <Route
+            path="customerDashboard"
+            element={
+              isAuthenticated && userRole === "Customer" ? (
+                <CustomerDashboard />
+              ) : (
+                <Navigate to="/" replace />
+              )
+            }
           />
           <Route
             path="account"
@@ -73,6 +100,26 @@ const App = () => {
           <Route
             path="users"
             element={isAuthenticated ? <Users /> : <Navigate to="/" replace />}
+          />
+
+          <Route
+            path="savings-plans"
+            element={isAuthenticated ? <SavingsPlans /> : <Navigate to="/" replace />}
+          />
+
+          <Route
+            path="interest-logs"
+            element={isAuthenticated ? <InterestLogs /> : <Navigate to="/" replace />}
+          />
+
+          <Route
+            path="monthly-statement"
+            element={isAuthenticated ? <MonthlyStatements /> : <Navigate to="/" replace />}
+          />
+
+          <Route
+            path="detailed-report"
+            element={isAuthenticated ? <DetailedReports /> : <Navigate to="/" replace />}
           />
         </Route>
       </Routes>

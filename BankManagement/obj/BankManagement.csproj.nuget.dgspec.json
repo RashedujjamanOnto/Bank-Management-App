@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Rashed Project\\BankManagement\\BankManagement.csproj": {}
+    "E:\\Project\\Bank-Management-App\\BankManagement\\BankManagement.csproj": {}
   },
   "projects": {
-    "E:\\Rashed Project\\BankManagement\\BankManagement.csproj": {
+    "E:\\Project\\Bank-Management-App\\BankManagement\\BankManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Rashed Project\\BankManagement\\BankManagement.csproj",
+        "projectUniqueName": "E:\\Project\\Bank-Management-App\\BankManagement\\BankManagement.csproj",
         "projectName": "BankManagement",
-        "projectPath": "E:\\Rashed Project\\BankManagement\\BankManagement.csproj",
+        "projectPath": "E:\\Project\\Bank-Management-App\\BankManagement\\BankManagement.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "E:\\Rashed Project\\BankManagement\\obj\\",
+        "outputPath": "E:\\Project\\Bank-Management-App\\BankManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,10 +49,6 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
-            },
-            "ClosedXML": {
-              "target": "Package",
-              "version": "[0.104.2, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",

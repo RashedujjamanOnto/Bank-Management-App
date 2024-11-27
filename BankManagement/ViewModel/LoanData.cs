@@ -8,6 +8,7 @@ namespace BankManagement.ViewModel
 
         public int LoanId { get; set; }
         public string CustomerName { get; set; }
+        public string AccountNumber { get; set; }
 
         public double Amount { get; set; }
 

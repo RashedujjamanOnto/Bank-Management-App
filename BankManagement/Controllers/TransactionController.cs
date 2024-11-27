@@ -1,4 +1,5 @@
 ﻿using BankManagement.Data;
+using BankManagement.Enums;
 using BankManagement.Model;
 using BankManagement.ViewModel;
 using Microsoft.AspNetCore.Authorization;
@@ -25,7 +26,7 @@ namespace BankManagement.Controllers
             var today = DateTime.Now.Date;
             var account = _context.Accounts.FirstOrDefault(a => a.AccountId == request.AccountId);
 
-            if (account == null)
+            if (account == null || !account.IsActive)
                 return NotFound("Account not found.");
 
             if (account.AccountType == "Loan")
@@ -69,7 +70,7 @@ namespace BankManagement.Controllers
             const double WITHDRAWAL_FEE_PERCENTAGE = 1.0; // 1% fee
             var account = _context.Accounts.FirstOrDefault(a => a.AccountId == request.AccountId);
 
-            if (account == null)
+            if (account == null || !account.IsActive)
                 return NotFound("Account not found.");
 
             if (account.Balance < request.Amount)
@@ -79,8 +80,9 @@ namespace BankManagement.Controllers
             if (account.AccountType == "Checking")
             {
                 var totalWithdrawalsThisMonth = _context.Transactions
-                    .Where(t => t.AccountId == request.AccountId && t.TransactionType.ToString() == "Withdraw" && t.TransactionDate.Month == DateTime.Now.Month)
-                    .Sum(t => t.Amount);
+    .Where(t => t.AccountId == request.AccountId && t.TransactionType == TransactionType.Withdrawal && t.TransactionDate.Month == DateTime.Now.Month)
+    .Sum(t => t.Amount);
+
 
                 if (totalWithdrawalsThisMonth + request.Amount > 10000)
                     return BadRequest("Monthly withdrawal limit exceeded.");
@@ -122,19 +124,6 @@ namespace BankManagement.Controllers
             return Ok("Withdrawal successful.");
         }
 
-        [HttpPost("RepayLoan/{scheduleId}")]
-        public IActionResult RepayLoan(int scheduleId)
-        {
-            var schedule = _context.LoanRepaymentSchedules.FirstOrDefault(s => s.ScheduleId == scheduleId);
-
-            if (schedule == null || schedule.IsPaid)
-                return BadRequest("Invalid repayment schedule.");
-
-            schedule.IsPaid = true;
-            _context.SaveChanges();
-
-            return Ok("Loan installment paid successfully.");
-        }
 
         [HttpPost("Transfer")]
         public IActionResult Transfer([FromBody] TransferDto request)

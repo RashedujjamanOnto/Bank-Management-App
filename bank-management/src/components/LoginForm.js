@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Box, TextField, Button, Typography, Container, Paper } from "@mui/material";
+import { Box, TextField, Button, Typography, Container, Paper, Grid } from "@mui/material";
 
 const LoginForm = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
@@ -16,7 +16,6 @@ const LoginForm = ({ setIsAuthenticated }) => {
       });
 
       if (response.data.token && response.data.userId && response.data.role) {
-  
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("userId", response.data.userId);
         localStorage.setItem("role", response.data.role);
@@ -24,8 +23,14 @@ const LoginForm = ({ setIsAuthenticated }) => {
         // Update isAuthenticated state
         setIsAuthenticated(true);
 
-        // Redirect to Dashboard
-        navigate("/dashboard");
+        // Redirect based on role
+        if (response.data.role === "Administrator") {
+          navigate("/adminDashboard");
+        } else if (response.data.role === "Customer") {
+          navigate("/customerDashboard");
+        } else {
+          alert("Invalid role. Please contact support.");
+        }
       } else {
         alert("Login response is invalid. Please try again.");
       }
@@ -36,14 +41,17 @@ const LoginForm = ({ setIsAuthenticated }) => {
   };
 
   return (
-    <Container maxWidth="xs" sx={{ mt: 30, pl: 30 }}>
-      <Paper elevation={3} sx={{ padding: 3 }}>
-        <Box textAlign="center" mb={2}>
-          <Typography variant="h4" gutterBottom>
-            Login
+    <Container maxWidth="xs" sx={{ mt: 10, pl: 30 }}>
+      <Paper elevation={6} sx={{ padding: 3, backgroundColor: "#f5f5f5", borderRadius: 3 }}>
+        <Box textAlign="center" mb={3}>
+          <Typography variant="h5" gutterBottom color="primary">
+            Welcome To
+          </Typography>
+          <Typography variant="h4" gutterBottom color="primary">
+            Bank Management
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
-            Enter your email and password to login
+            Enter your credentials to continue
           </Typography>
         </Box>
         <Box component="form" noValidate>
@@ -55,6 +63,13 @@ const LoginForm = ({ setIsAuthenticated }) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "20px",
+                backgroundColor: "#fff",
+              },
+              marginBottom: "15px",
+            }}
           />
           <TextField
             fullWidth
@@ -64,18 +79,43 @@ const LoginForm = ({ setIsAuthenticated }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "20px",
+                backgroundColor: "#fff",
+              },
+              marginBottom: "20px",
+            }}
           />
           <Button
             variant="contained"
             color="primary"
             fullWidth
-            sx={{ mt: 2 }}
+            sx={{
+              mt: 2,
+              backgroundColor: "#3f51b5",
+              "&:hover": {
+                backgroundColor: "#283593",
+              },
+              padding: "12px",
+              borderRadius: "25px",
+            }}
             onClick={handleLogin}
           >
             Login
           </Button>
         </Box>
       </Paper>
+      <Grid container spacing={1} justifyContent="center" sx={{ mt: 3 }}>
+        <Grid item>
+          <Typography variant="body2" color="textSecondary" sx={{ fontWeight: 500 }}>
+            Don't have an account?{" "}
+            <Button color="primary" sx={{ textTransform: "none", fontSize: "14px" }}>
+              Sign Up
+            </Button>
+          </Typography>
+        </Grid>
+      </Grid>
     </Container>
   );
 };

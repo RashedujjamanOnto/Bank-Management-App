@@ -21,37 +21,69 @@ const LoanApplication = () => {
   const [amount, setAmount] = useState("");
   const [remarks, setRemark] = useState("");
   const [message, setMessage] = useState("");
+  const [accounts, setAccounts] = useState([]);
+  const [selectedAccountId, setSelectedAccountId] = useState("");
   const [loans, setUserLoans] = useState([]);
   const navigate = useNavigate();
+  const userId = localStorage.getItem("userId"); 
+  const userRole = localStorage.getItem("role"); 
 
-  const userId = localStorage.getItem("userId");
-
-  // Fetch User Loans
+  // Fetch Accounts and Loans
   useEffect(() => {
-    fetchUserLoans();
-  }, [userId]);
-  const fetchUserLoans = async () => {
+    fetchAccounts();
+  }, []);
+
+  useEffect(() => {
+    if (selectedAccountId) {
+      fetchUserLoans(selectedAccountId);
+    }
+  }, [selectedAccountId]);
+
+  const fetchAccounts = async () => {
     try {
-      const response = await API.get(`/Loan/GetUserLoans/${userId}`);
-      setUserLoans(response.data);
+      let response;
+      if (userRole === "Administrator") {
+    
+        response = await API.get(`/Account/GetAllLoanAccounts`);
+      } else {
+
+        response = await API.get(`/Account/GetLoanAccount/${userId}`);
+      }
+      setAccounts(response.data);
+  
+      if (response.data.length === 1) {
+        setSelectedAccountId(response.data[0].accountId);
+      }
     } catch (error) {
-      setUserLoans([]); // Reset if error occurs
+      setMessage({
+        type: "error",
+        text: "Failed to fetch accounts. Please try again later.",
+      });
     }
   };
+
+  const fetchUserLoans = async (accountId) => {
+    try {
+      const response = await API.get(`/Loan/GetUserLoans/${accountId}`);
+      setUserLoans(response.data);
+    } catch (error) {
+      setUserLoans([]); 
+    }
+  };
+
   const handleSubmit = async () => {
     try {
       const response = await API.post("/Loan/ApplyLoan", {
-        userId: parseInt(userId, 10),
+        accountId: selectedAccountId,
         loanType: parseInt(loanType, 10),
         amount: parseFloat(amount),
         remarks,
       });
       setMessage({ type: "success", text: response.data });
-      fetchUserLoans();
+      fetchUserLoans(selectedAccountId);
       setLoanType("");
       setAmount("");
       setRemark("");
-      
     } catch (error) {
       setMessage({ type: "error", text: "Failed to submit loan application." });
     }
@@ -63,6 +95,38 @@ const LoanApplication = () => {
         <Typography variant="h4" sx={{ textAlign: "center", mb: 3 }}>
           Apply for a Loan
         </Typography>
+        {message && (
+          <Alert severity={message.type} sx={{ mb: 2 }}>
+            {message.text}
+          </Alert>
+        )}
+
+ 
+        {userRole === "Administrator" ? (
+          <TextField
+            select
+            fullWidth
+            label="Select Account"
+            value={selectedAccountId}
+            onChange={(e) => setSelectedAccountId(e.target.value)}
+            sx={{ mb: 3 }}
+          >
+            {accounts.map((acc) => (
+              <MenuItem key={acc.accountId} value={acc.accountId}>
+                {acc.accountNumber}
+              </MenuItem>
+            ))}
+          </TextField>
+        ) : (
+          <TextField
+            fullWidth
+            label="Your Loan Account"
+            value={accounts[0]?.accountNumber || ""}
+            sx={{ mb: 3 }}
+            disabled
+          />
+        )}
+
         <TextField
           select
           fullWidth
@@ -90,17 +154,21 @@ const LoanApplication = () => {
           onChange={(e) => setRemark(e.target.value)}
           sx={{ mb: 3 }}
         />
-        <Button variant="contained" color="primary" fullWidth onClick={handleSubmit}>
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          onClick={handleSubmit}
+          disabled={!selectedAccountId} 
+        >
           Submit Application
         </Button>
-        
       </Paper>
 
       <Paper elevation={3} sx={{ padding: 4, mt: 4 }}>
         <Typography variant="h5" sx={{ mb: 3, textAlign: "center" }}>
           Your Loan Applications
         </Typography>
-        {message && <Alert severity={message.type} sx={{ mb: 2}}>{message.text}</Alert>}
         {loans.length > 0 ? (
           <Table>
             <TableHead>
@@ -123,19 +191,37 @@ const LoanApplication = () => {
                   <TableCell>{loan.amount}</TableCell>
                   <TableCell>{loan.interestRate}</TableCell>
                   <TableCell>{loan.durationInMonths}</TableCell>
-                  <TableCell>{loan.status}</TableCell>
+                  <TableCell
+                    sx={{
+                      color:
+                        loan.status === "Approved"
+                          ? "green"
+                          : loan.status === "Pending"
+                            ? "orange"
+                            : loan.status === "Rejected"
+                              ? "red"
+                              : "white",
+                       
+                      fontWeight: "bold", 
+                      textAlign: "center", 
+                    }}
+                  >
+                    {loan.status}
+                  </TableCell>
                   <TableCell>{loan.remarks || "N/A"}</TableCell>
                   <TableCell>{loan.totalRepayableAmount}</TableCell>
-                  <TableCell>{loan.monthlyInstallment}</TableCell>
                   <TableCell>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={() => navigate(`/repaymentschedule/${loan.loanId}`)}
-                  >
-                    View Schedule
-                  </Button>
-                </TableCell>
+                    {Number.isFinite(loan.monthlyInstallment) ? loan.monthlyInstallment : 0}
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={() => navigate(`/repaymentschedule/${loan.loanId}`)}
+                    >
+                      View Schedule
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

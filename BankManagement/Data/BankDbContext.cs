@@ -14,6 +14,8 @@ namespace BankManagement.Data
         public DbSet<UserRoles> UserRoles { get; set; }
         public DbSet<OtpEntry> OtpEntries { get; set; }
         public DbSet<LoanRepaymentSchedule> LoanRepaymentSchedules { get; set; }
+        public DbSet<SavingsPlan> SavingsPlans { get; set; }
+        public DbSet<SavingsPlanEnrollment> SavingsPlanEnrollments { get; set; }
     }
 
 }

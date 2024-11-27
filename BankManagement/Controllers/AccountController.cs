@@ -28,7 +28,7 @@ namespace BankManagement.Controllers
             {
 
                 var selfAccounts = _context.Accounts
-                    .Where(a => a.UserId == selfUserId)
+                    .Where(a => a.UserId == selfUserId && a.IsActive)
                        .Select(a => new
                        {
                            a.AccountId,
@@ -46,12 +46,35 @@ namespace BankManagement.Controllers
                            a.Currency,
                            a.UserId,
                            a.IsActive,
-                           UserName = _context.Users.FirstOrDefault(u => u.Id == a.UserId).Name // Map User Name
+                           UserName = _context.Users.FirstOrDefault(u => u.Id == a.UserId).Name 
                        }).ToList();
             return Ok(accounts);
         }
 
-        [Authorize(Roles = "Administrator")]
+        [HttpGet("GetLoanAccount/{selfUserId}")]
+        public IActionResult GetLoanAccount(int selfUserId)
+        {
+            var loanAccount = _context.Accounts.Where(c => c.UserId == selfUserId && c.AccountType == "Loan" && c.IsActive);
+            if (loanAccount == null)
+            {
+                return NotFound("Your loan account not found. Please create your loan account");
+            }
+            return Ok(loanAccount);
+        }
+        
+        [HttpGet("GetAllLoanAccounts")]
+        [Authorize(Roles = "Administrator, BankEmployee")]
+        public IActionResult GetAllLoanAccounts()
+        {
+            var loanAccount = _context.Accounts.Where(c => c.AccountType == "Loan" && c.IsActive);
+            if (loanAccount == null)
+            {
+                return NotFound("Loan account not found. Please create loan account first");
+            }
+            return Ok(loanAccount);
+        }
+
+        [Authorize(Roles = "Administrator, BankEmployee")]
         [HttpPost("CreateAccount")]
         public IActionResult CreateAccount([FromBody] AccountDto accountDto)
         {
@@ -68,7 +91,8 @@ namespace BankManagement.Controllers
                 Balance = accountDto.Balance,
                 UserId = accountDto.UserId,
                 Currency = accountDto.Currency ?? "USD",
-                AccountNumber = accountNumber // Set the auto-generated account number
+                AccountNumber = accountNumber,
+                IsActive = true
             };
 
             _context.Accounts.Add(account);
@@ -99,7 +123,7 @@ namespace BankManagement.Controllers
         }
 
         [HttpDelete("DeleteAccount/{id}")]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, BankEmployee")]
         public IActionResult DeleteAccount(int id)
         {
             var account = _context.Accounts.FirstOrDefault(a => a.AccountId == id);
@@ -115,19 +139,19 @@ namespace BankManagement.Controllers
         }
 
         [HttpGet("GetAccountDetails/{id}")]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, BankEmployee")]
         public IActionResult GetAccountDetails(int id)
         {
             var account = _context.Accounts.FirstOrDefault(a => a.AccountId == id);
             if (account == null)
             {
-                return NoContent(); // Return 204 if account not found
+                return NoContent(); 
             }
 
             var customer = _context.Users.FirstOrDefault(u => u.Id == account.UserId);
             if (customer == null)
             {
-                return NoContent(); // Return 204 if user not found
+                return NoContent(); 
             }
 
             var transactions = _context.Transactions
@@ -160,7 +184,7 @@ namespace BankManagement.Controllers
 
 
         [HttpGet("GetUsers")]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator , BankEmployee")]
         public IActionResult GetUsers()
         {
             var users = _context.Users
@@ -175,7 +199,7 @@ namespace BankManagement.Controllers
         }
 
         [HttpPut("ToggleAccountStatus/{id}")]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, BankEmployee")]
         public IActionResult ToggleAccountStatus(int id, [FromBody] UpdateAccountStatusDto statusDto)
         {
             var account = _context.Accounts.FirstOrDefault(a => a.AccountId == id);
@@ -192,9 +216,9 @@ namespace BankManagement.Controllers
         private string GenerateAccountNumber()
         {
             var random = new Random();
-            var timestamp = DateTime.UtcNow.ToString("yyyyMMddHHmmss"); // Current timestamp
-            var randomNumber = random.Next(1000, 9999); // Random 4-digit number
-            return $"{timestamp}{randomNumber}"; // Combine timestamp and random number
+            var timestamp = DateTime.UtcNow.ToString("yyyyMMddHHmmss"); 
+            var randomNumber = random.Next(1000, 9999); 
+            return $"{timestamp}{randomNumber}"; 
         }
 
     }

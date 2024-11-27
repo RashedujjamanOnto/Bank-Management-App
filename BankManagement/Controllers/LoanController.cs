@@ -2,7 +2,6 @@
 using BankManagement.Enums;
 using BankManagement.Model;
 using BankManagement.ViewModel;
-using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +23,9 @@ namespace BankManagement.Controllers
         public IActionResult ApplyLoan([FromBody] ApplyLoan request)
         {
             // Check if all the fields are valid
+            if (request.AccountId == 0) {
+                return BadRequest("Please create your loan account first.");
+            }
             if (request.Amount <= 0)
             {
                 return BadRequest("Invalid loan details.");
@@ -35,9 +37,9 @@ namespace BankManagement.Controllers
                 Amount = request.Amount,     // Add InterestRate
                 LoanType = (LoanType)request.LoanType,
                 ApplicationDate = DateTime.Now,
-                Remarks = request.Remarks,  // Add DurationInMonths
-                Status = "Pending",   // Initial status is "Pending"
-                UserId = request.UserId
+                Remarks = request.Remarks, 
+                AccountId = request.AccountId,// Add DurationInMonths
+                Status = "Pending",
             };
 
             // Save loan in database
@@ -47,11 +49,11 @@ namespace BankManagement.Controllers
             return Ok("Loan application successful.");
         }
 
-        [HttpGet("GetUserLoans/{userId}")]
-        public IActionResult GetUserLoans(int userId)
+        [HttpGet("GetUserLoans/{accountId}")]
+        public IActionResult GetUserLoans(int accountId)
         {
             var loans = _context.Loans
-                .Where(l => l.UserId == userId)
+                .Where(l => l.AccountId == accountId)
                 .Select(l => new LoanData
                 {
                     LoanId = l.LoanId,
@@ -73,7 +75,7 @@ namespace BankManagement.Controllers
             return Ok(loans);
         }
 
-        [Authorize(Roles = "Administrator,Manager")]
+        [Authorize(Roles = "Administrator, BankEmployee")]
         [HttpGet("GetLoans")]
         public IActionResult GetLoans()
         {
@@ -81,7 +83,8 @@ namespace BankManagement.Controllers
                 .Select(l => new LoanData
                 {
                     LoanId = l.LoanId,
-                    CustomerName = _context.Users.FirstOrDefault(c => c.Id == l.UserId).Name,
+                    CustomerName = _context.Accounts.FirstOrDefault(c => c.AccountId == l.AccountId).User.Name ?? "",
+                    AccountNumber = _context.Accounts.FirstOrDefault(c => c.AccountId == l.AccountId).AccountNumber ?? "",
                     Amount = l.Amount,
                     LoanType = l.LoanType.ToString(),
                     InterestRate = l.InterestRate,
@@ -130,7 +133,7 @@ namespace BankManagement.Controllers
         // Generate Repayment Schedule Method
         private IActionResult GenerateRepaymentSchedule(int loanId)
         {
-            var loan = _context.Loans.Include(l => l.User).FirstOrDefault(l => l.LoanId == loanId);
+            var loan = _context.Loans.FirstOrDefault(l => l.LoanId == loanId);
 
             if (loan == null)
                 return NotFound("Loan not found.");

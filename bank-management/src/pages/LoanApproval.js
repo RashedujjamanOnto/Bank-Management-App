@@ -120,7 +120,19 @@ const LoanApproval = () => {
                 <TableCell>{loan.amount}</TableCell>
                 <TableCell>{loan.interestRate || "N/A"}</TableCell>
                 <TableCell>{loan.durationInMonths || "N/A"}</TableCell>
-                <TableCell>{loan.status}</TableCell>
+                <TableCell  sx={{
+                      color:
+                        loan.status === "Approved"
+                          ? "green"
+                          : loan.status === "Pending"
+                            ? "orange"
+                            : loan.status === "Rejected"
+                              ? "red"
+                              : "white",
+                       
+                      fontWeight: "bold", 
+                      textAlign: "center", 
+                    }}>{loan.status}</TableCell>
                 <TableCell>{loan.remarks || "N/A"}</TableCell>
                 <TableCell>
                   {loan.interestRate && loan.durationInMonths

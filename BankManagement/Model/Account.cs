@@ -23,6 +23,8 @@ namespace BankManagement.Model
         [Required]
         [StringLength(50)]
         public string AccountNumber { get; set; } // Unique Account Number
+        public double InterestRate { get; set; } // Account-specific interest rate
+        public DateTime LastInterestCreditedDate { get; set; }
 
         [Required]
         [ForeignKey("User")]

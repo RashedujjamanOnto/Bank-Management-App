@@ -11,26 +11,25 @@ import {
   Paper,
   Alert,
 } from "@mui/material";
-import { useParams } from "react-router-dom"; // Import useParams
+import { useParams } from "react-router-dom"; 
 import API from "../services/api";
 
 const RepaymentSchedule = () => {
-  const { loanId } = useParams(); // Extract loanId from the URL
-  const { scheduleId } = useParams(); // Extract loanId from the URL
+  const { loanId } = useParams(); 
+  const { scheduleId } = useParams(); 
   const [schedules, setSchedules] = useState([]);
   const [message, setMessage] = useState("");
   const userRole = localStorage.getItem("role");
 
+  const fetchSchedules = async () => {
+    try {
+      const response = await API.get(`/Loan/GetRepaymentScheduleWithPenalties/${loanId}`);
+      setSchedules(response.data);
+    } catch (error) {
+      console.error("Failed to fetch repayment schedules:", error);
+    }
+  };
   useEffect(() => {
-    const fetchSchedules = async () => {
-      try {
-        const response = await API.get(`/Loan/GetRepaymentScheduleWithPenalties/${loanId}`);
-        setSchedules(response.data);
-      } catch (error) {
-        console.error("Failed to fetch repayment schedules:", error);
-      }
-    };
-
     fetchSchedules();
   }, [loanId]);
 
@@ -40,12 +39,14 @@ const RepaymentSchedule = () => {
         scheduleId: scheduleId,
         loanId: loanId
       });
+      
       setSchedules(
         schedules.map((schedule) =>
           schedule.ScheduleId === scheduleId ? { ...schedule, IsPaid: true } : schedule
         )
       );
       setMessage({ type: "success", text: response.data });
+      fetchSchedules();
     } catch (error) {
       setMessage({ type: "error", text: "Failed to pay loan." });
     }
@@ -74,7 +75,13 @@ const RepaymentSchedule = () => {
                 <TableCell>{new Date(schedule.dueDate).toLocaleDateString()}</TableCell>
                 <TableCell>${schedule.amountDue.toFixed(2)}</TableCell>
                 <TableCell>${schedule.penalty.toFixed(2)}</TableCell>
-                <TableCell>{schedule.isPaid ? "Paid" : "Pending"}</TableCell>
+                <TableCell sx={{
+                      color:
+                      schedule.isPaid
+                          ? "green"
+                          :  "orange",
+                      fontWeight: "bold",
+                    }}>{schedule.isPaid ? "Paid" : "Pending"}</TableCell>
                 <TableCell>
                   {!schedule.isPaid && (
                     <Button

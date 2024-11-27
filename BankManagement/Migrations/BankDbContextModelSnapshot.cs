@@ -51,8 +51,14 @@ namespace BankManagement.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<double>("InterestRate")
+                        .HasColumnType("float");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastInterestCreditedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -74,6 +80,9 @@ namespace BankManagement.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LoanId"));
+
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int");
 
                     b.Property<double>("Amount")
                         .HasColumnType("float");
@@ -97,12 +106,7 @@ namespace BankManagement.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("LoanId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Loans");
                 });
@@ -157,6 +161,68 @@ namespace BankManagement.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OtpEntries");
+                });
+
+            modelBuilder.Entity("BankManagement.Model.SavingsPlan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DurationInMonths")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("InterestRate")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<double>("MinimumAmount")
+                        .HasColumnType("float");
+
+                    b.Property<string>("PlanName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SavingsPlans");
+                });
+
+            modelBuilder.Entity("BankManagement.Model.SavingsPlanEnrollment", b =>
+                {
+                    b.Property<int>("EnrollmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EnrollmentId"));
+
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Amount")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PlanId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EnrollmentId");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("PlanId");
+
+                    b.ToTable("SavingsPlanEnrollments");
                 });
 
             modelBuilder.Entity("BankManagement.Model.Transaction", b =>
@@ -259,17 +325,6 @@ namespace BankManagement.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("BankManagement.Model.Loan", b =>
-                {
-                    b.HasOne("BankManagement.Model.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("BankManagement.Model.LoanRepaymentSchedule", b =>
                 {
                     b.HasOne("BankManagement.Model.Loan", "Loan")
@@ -279,6 +334,25 @@ namespace BankManagement.Migrations
                         .IsRequired();
 
                     b.Navigation("Loan");
+                });
+
+            modelBuilder.Entity("BankManagement.Model.SavingsPlanEnrollment", b =>
+                {
+                    b.HasOne("BankManagement.Model.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BankManagement.Model.SavingsPlan", "SavingsPlan")
+                        .WithMany()
+                        .HasForeignKey("PlanId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("SavingsPlan");
                 });
 
             modelBuilder.Entity("BankManagement.Model.Transaction", b =>
