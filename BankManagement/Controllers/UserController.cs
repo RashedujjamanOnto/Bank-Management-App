@@ -67,7 +67,7 @@ namespace BankManagement.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest loginRequest)
         {
-            var user = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.Email == loginRequest.Email);
+            var user = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.Email == loginRequest.Email && u.IsActive);
             if (user == null || !BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.Password))
             {
                 return Unauthorized("Invalid email or password.");

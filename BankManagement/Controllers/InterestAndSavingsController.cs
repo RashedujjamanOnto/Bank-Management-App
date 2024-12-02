@@ -1,5 +1,7 @@
 ﻿using BankManagement.Data;
 using BankManagement.Model;
+using BankManagement.Repository.Interface;
+using BankManagement.Repository.Manager;
 using BankManagement.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,16 +12,20 @@ namespace BankManagement.Controllers
     [ApiController]
     public class InterestAndSavingsController : ControllerBase
     {
+        private readonly IAccountManager accountManager;
+        private readonly ISavingsPlansManager savingsPlansManager;
         private readonly BankDbContext _context;
 
         public InterestAndSavingsController(BankDbContext context)
         {
+            accountManager = new AccountManager(context);
+            savingsPlansManager = new SavingsPlansManager(context);
             _context = context;
         }
         [HttpPost("CalculateInterest")]
         public IActionResult CalculateInterest()
         {
-            var accounts = _context.Accounts.Where(a => a.AccountType == "Savings").ToList();
+            var accounts = accountManager.GetSavingAccount();
 
             foreach (var account in accounts)
             {
@@ -57,10 +63,10 @@ namespace BankManagement.Controllers
         [HttpPost("EnrollSavingsPlan")]
         public IActionResult EnrollSavingsPlan([FromBody] SavingsPlanRequest request)
         {
-            var plan = _context.SavingsPlans.FirstOrDefault(p => p.Id == request.PlanId);
+            var plan = savingsPlansManager.GetById(request.PlanId);
             if (plan == null) return NotFound("Savings plan not found.");
 
-            var account = _context.Accounts.FirstOrDefault(a => a.AccountId == request.AccountId);
+            var account = accountManager.GetById(request.AccountId);
             if (account == null) return NotFound("Account not found.");
 
             if (request.Amount < plan.MinimumAmount)

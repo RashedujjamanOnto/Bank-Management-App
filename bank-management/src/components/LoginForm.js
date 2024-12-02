@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Box, TextField, Button, Typography, Container, Paper, Grid } from "@mui/material";
+import { Box, TextField, Button, Typography, Container, Paper, Grid,Alert } from "@mui/material";
 
 const LoginForm = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -14,12 +15,10 @@ const LoginForm = ({ setIsAuthenticated }) => {
         email,
         password,
       });
-
       if (response.data.token && response.data.userId && response.data.role) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("userId", response.data.userId);
         localStorage.setItem("role", response.data.role);
-
         // Update isAuthenticated state
         setIsAuthenticated(true);
 
@@ -36,12 +35,12 @@ const LoginForm = ({ setIsAuthenticated }) => {
       }
     } catch (error) {
       console.error("Login failed:", error);
-      alert("Invalid credentials. Please check your email and password.");
+      setMessage({ type: "error", text: "Invalid credentials. Please check your email and password." });
     }
   };
 
   return (
-    <Container maxWidth="xs" sx={{ mt: 10, pl: 30 }}>
+    <Container maxWidth="xs" sx={{ mt: 15, pl: 30 }}>
       <Paper elevation={6} sx={{ padding: 3, backgroundColor: "#f5f5f5", borderRadius: 3 }}>
         <Box textAlign="center" mb={3}>
           <Typography variant="h5" gutterBottom color="primary">
@@ -51,8 +50,9 @@ const LoginForm = ({ setIsAuthenticated }) => {
             Bank Management
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
-            Enter your credentials to continue
+            Enter your credentials to continue           
           </Typography>
+          {message && <Alert severity={message.type} sx={{ my: 1 }}>{message.text}</Alert>}
         </Box>
         <Box component="form" noValidate>
           <TextField

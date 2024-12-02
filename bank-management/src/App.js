@@ -16,10 +16,10 @@ import DetailedReports from './pages/DetailedReports';
 import AdminDashboard from "./pages/AdminDashboard";
 import CustomerDashboard from "./pages/CustomerDashboard";
 
-const userRole = localStorage.getItem("role");
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token"));
+  const userRole = localStorage.getItem("role");
 
   useEffect(() => {
     // Watch for token changes in localStorage
@@ -30,11 +30,11 @@ const App = () => {
     window.addEventListener("storage", handleStorageChange);
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
-
   return (
     <Router>
       <Routes>
         {/* Public Route */}
+       
         <Route
           path="/"
           element={

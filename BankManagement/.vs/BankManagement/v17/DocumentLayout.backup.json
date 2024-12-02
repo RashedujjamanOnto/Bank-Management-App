@@ -3,22 +3,6 @@
   "WorkspaceRootPath": "E:\\Project\\Bank-Management-App\\BankManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\controllers\\twofactorauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\twofactorauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,12 +15,40 @@
       "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\interestandsavingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\repository\\manager\\savingsplansmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:repository\\manager\\savingsplansmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\repository\\interface\\isavingsplansmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:repository\\interface\\isavingsplansmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\repository\\interface\\iaccountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:repository\\interface\\iaccountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\repository\\manager\\accountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:repository\\manager\\accountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\repository\\manager\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:repository\\manager\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\repository\\interface\\iusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:repository\\interface\\iusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|e:\\project\\bank-management-app\\bankmanagement\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{686927B2-2F16-4E46-8B5D-1AC199E57B6A}|BankManagement.csproj|solutionrelative:controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,97 +58,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAUwGMAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:02:11.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TwoFactorAuthController.cs",
-              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\TwoFactorAuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TwoFactorAuthController.cs",
-              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\TwoFactorAuthController.cs",
-              "RelativeToolTip": "Controllers\\TwoFactorAuthController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:02:07.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TransactionController.cs",
-              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\TransactionController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TransactionController.cs",
-              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\TransactionController.cs",
-              "RelativeToolTip": "Controllers\\TransactionController.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:01:50.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReportsController.cs",
-              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\ReportsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReportsController.cs",
-              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\ReportsController.cs",
-              "RelativeToolTip": "Controllers\\ReportsController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowD0AAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:01:35.192Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoanController.cs",
-              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\LoanController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LoanController.cs",
-              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\LoanController.cs",
-              "RelativeToolTip": "Controllers\\LoanController.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAAAuwE0AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:01:16.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "InterestScheduler.cs",
               "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\InterestScheduler.cs",
               "RelativeDocumentMoniker": "Controllers\\InterestScheduler.cs",
               "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\InterestScheduler.cs",
               "RelativeToolTip": "Controllers\\InterestScheduler.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:01:11.193Z",
+              "WhenOpened": "2024-12-02T14:56:59.577Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "InterestAndSavingsController.cs",
-              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\InterestAndSavingsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\InterestAndSavingsController.cs",
-              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\InterestAndSavingsController.cs",
-              "RelativeToolTip": "Controllers\\InterestAndSavingsController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowBIAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "SavingsPlansManager.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Manager\\SavingsPlansManager.cs",
+              "RelativeDocumentMoniker": "Repository\\Manager\\SavingsPlansManager.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Manager\\SavingsPlansManager.cs",
+              "RelativeToolTip": "Repository\\Manager\\SavingsPlansManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:00:40.622Z",
+              "WhenOpened": "2024-12-02T14:54:20.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ISavingsPlansManager.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Interface\\ISavingsPlansManager.cs",
+              "RelativeDocumentMoniker": "Repository\\Interface\\ISavingsPlansManager.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Interface\\ISavingsPlansManager.cs",
+              "RelativeToolTip": "Repository\\Interface\\ISavingsPlansManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T14:52:54.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IAccountManager.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Interface\\IAccountManager.cs",
+              "RelativeDocumentMoniker": "Repository\\Interface\\IAccountManager.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Interface\\IAccountManager.cs",
+              "RelativeToolTip": "Repository\\Interface\\IAccountManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T14:42:45.516Z",
               "EditorCaption": ""
             },
             {
@@ -145,26 +118,103 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
-              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "Controllers\\DashboardController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowBUAAAA3AAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "AccountManager.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Manager\\AccountManager.cs",
+              "RelativeDocumentMoniker": "Repository\\Manager\\AccountManager.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Manager\\AccountManager.cs",
+              "RelativeToolTip": "Repository\\Manager\\AccountManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:00:27.784Z",
+              "WhenOpened": "2024-12-02T14:42:13.263Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Controllers\\DashboardController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowDQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T14:34:58.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserManager.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Interface\\IUserManager.cs",
+              "RelativeDocumentMoniker": "Repository\\Interface\\IUserManager.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Interface\\IUserManager.cs",
+              "RelativeToolTip": "Repository\\Interface\\IUserManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T14:24:55.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserManager.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Manager\\UserManager.cs",
+              "RelativeDocumentMoniker": "Repository\\Manager\\UserManager.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Repository\\Manager\\UserManager.cs",
+              "RelativeToolTip": "Repository\\Manager\\UserManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T14:20:48.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ReportsController.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\ReportsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReportsController.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\ReportsController.cs",
+              "RelativeToolTip": "Controllers\\ReportsController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowD0AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T21:01:35.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoanController.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\LoanController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoanController.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\LoanController.cs",
+              "RelativeToolTip": "Controllers\\LoanController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T21:01:16.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InterestAndSavingsController.cs",
+              "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\InterestAndSavingsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\InterestAndSavingsController.cs",
+              "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\InterestAndSavingsController.cs",
+              "RelativeToolTip": "Controllers\\InterestAndSavingsController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwv0UAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T21:00:40.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "AccountController.cs",
               "DocumentMoniker": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
               "ToolTip": "E:\\Project\\Bank-Management-App\\BankManagement\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAABgAAAAAAAAAA==",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAqwMcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-27T20:59:21.858Z",
               "EditorCaption": ""

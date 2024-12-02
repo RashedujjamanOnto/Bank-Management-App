@@ -1,5 +1,7 @@
 ﻿using BankManagement.Data;
 using BankManagement.Model;
+using BankManagement.Repository.Interface;
+using BankManagement.Repository.Manager;
 using BankManagement.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -12,10 +14,14 @@ namespace BankManagement.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
+        private readonly IAccountManager accountManager;
+        private readonly IUserManager userManager;
         private readonly BankDbContext _context;
 
         public AccountController(BankDbContext context)
         {
+            accountManager = new AccountManager(context);
+            userManager = new UserManager(context);
             _context = context;
         }
 
@@ -54,7 +60,7 @@ namespace BankManagement.Controllers
         [HttpGet("GetLoanAccount/{selfUserId}")]
         public IActionResult GetLoanAccount(int selfUserId)
         {
-            var loanAccount = _context.Accounts.Where(c => c.UserId == selfUserId && c.AccountType == "Loan" && c.IsActive);
+            var loanAccount = accountManager.GetLoanAccountByUserId(selfUserId);
             if (loanAccount == null)
             {
                 return NotFound("Your loan account not found. Please create your loan account");
@@ -66,7 +72,7 @@ namespace BankManagement.Controllers
         [Authorize(Roles = "Administrator, BankEmployee")]
         public IActionResult GetAllLoanAccounts()
         {
-            var loanAccount = _context.Accounts.Where(c => c.AccountType == "Loan" && c.IsActive);
+            var loanAccount = accountManager.GetLoanAccount();
             if (loanAccount == null)
             {
                 return NotFound("Loan account not found. Please create loan account first");
@@ -104,7 +110,7 @@ namespace BankManagement.Controllers
         [Authorize(Roles = "Administrator, BankEmployee")]
         public IActionResult UpdateAccount(int id, [FromBody] AccountDto accountDto)
         {
-            var account = _context.Accounts.FirstOrDefault(a => a.AccountId == id);
+            var account = accountManager.GetById(id);
             if (account == null)
             {
                 return NotFound("Account not found.");
@@ -126,7 +132,7 @@ namespace BankManagement.Controllers
         [Authorize(Roles = "Administrator, BankEmployee")]
         public IActionResult DeleteAccount(int id)
         {
-            var account = _context.Accounts.FirstOrDefault(a => a.AccountId == id);
+            var account = accountManager.GetById(id);
             if (account == null)
             {
                 return NotFound("Account not found.");
@@ -142,13 +148,13 @@ namespace BankManagement.Controllers
         [Authorize(Roles = "Administrator, BankEmployee")]
         public IActionResult GetAccountDetails(int id)
         {
-            var account = _context.Accounts.FirstOrDefault(a => a.AccountId == id);
+            var account = accountManager.GetById(id);
             if (account == null)
             {
                 return NoContent(); 
             }
 
-            var customer = _context.Users.FirstOrDefault(u => u.Id == account.UserId);
+            var customer = userManager.GetById(account.UserId);
             if (customer == null)
             {
                 return NoContent(); 
@@ -187,13 +193,7 @@ namespace BankManagement.Controllers
         [Authorize(Roles = "Administrator , BankEmployee")]
         public IActionResult GetUsers()
         {
-            var users = _context.Users
-                .Select(u => new
-                {
-                    u.Id, // userId
-                    u.Name
-                })
-                .ToList();
+            var users = userManager.GetAll();
 
             return Ok(users);
         }
@@ -202,7 +202,7 @@ namespace BankManagement.Controllers
         [Authorize(Roles = "Administrator, BankEmployee")]
         public IActionResult ToggleAccountStatus(int id, [FromBody] UpdateAccountStatusDto statusDto)
         {
-            var account = _context.Accounts.FirstOrDefault(a => a.AccountId == id);
+            var account = accountManager.GetById(id);
 
             if (account == null)
                 return NotFound("Account not found.");
